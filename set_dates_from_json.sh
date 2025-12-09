@@ -30,7 +30,7 @@ for file in "$MEDIA_DIR"/*; do
   # [[ "$file" == *.json ]] && continue
 
   filename=$(basename "$file")
-  json_file=$(find "$JSON_DIR" -name "$filename.json" -o -name "$filename.suppl.json" | head -n 1)
+  json_file=$(find "$JSON_DIR" -name "$filename.json" -o -name "$filename.suppl.json" -o -name "$filename.supp.json" -o -name "$filename.supplemental-metada.json" -o -name "$filename.supplemental-me.json" -o -name "$filename.supplemental-m.json" -o -name "$filename.supplement.json" -o -name "$filename.suppleme.json" -o -name "$filename..json" | head -n 1)
 
   if [ ! -f "$json_file" ]; then
     echo "No JSON found for: $filename"
